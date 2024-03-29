@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "bb2b9e2b-219d-4db7-a1fe-a7c9c82d5486",
+		"name": "banking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "844034"
+	},
+	"item": [
+		{
+			"name": "Signup-employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\": \"employee1\",\n    \"password\": \"password1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/auth/signup-for-employee"
+			},
+			"response": []
+		},
+		{
+			"name": "Signin-employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\": \"employee1\",\n    \"password\": \"password1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/auth/signin-for-employee"
+			},
+			"response": []
+		},
+		{
+			"name": "Create customer (use jwt from sign in employee)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llZTEiLCJpYXQiOjE3MTE3Mzg3NDEsImV4cCI6MTcxMTczODgwMX0.XZEzPG6-b2hNK1iLS40nRLOhjpcy6R_XoQgus1x0Fxc"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// String firstName, String lastName, Address address, MobileNumberDTO mobileNumber, String emailAddress\n{\n    \"firstName\": \"firstName\",\n    \"lastName\": \"lastName\",\n    \"address\": {\n        \"houseNumber\": \"11\",\n        \"addition\": \"1\",\n        \"streetName\": \"test\",\n        \"city\": \"hilversum\",\n        \"pinCode\": \"1111 AA\",\n        \"region\": \"Noord Holland\",\n        \"country\": \"Netherlands\"\n    },\n    \"mobileNumber\": {\n        \"countryCode\": \"+31\",\n        \"number\": \"60000000\"\n    },\n    \"emailAddress\": \"abc@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/customers"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All customers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llZTEiLCJpYXQiOjE3MTE3MzkwMjksImV4cCI6MTcxMTczOTA4OX0.BQZu20VCc4JV-tlBpFUxPi0vOjD6668gdKmIRgNrtcU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// String firstName, String lastName, Address address, MobileNumberDTO mobileNumber, String emailAddress\n{\n    \"firstName\": \"firstName\",\n    \"lastName\": \"lastName\",\n    \"address\": {\n        \"houseNumber\": \"11\",\n        \"addition\": \"1\",\n        \"streetName\": \"test\",\n        \"city\": \"hilversum\",\n        \"pinCode\": \"1111 AA\",\n        \"region\": \"Noord Holland\",\n        \"country\": \"Netherlands\"\n    },\n    \"mobileNumber\": {\n        \"countryCode\": \"+31\",\n        \"number\": \"60000000\"\n    },\n    \"emailAddress\": \"abc@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/customers/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llZTEiLCJpYXQiOjE3MTE3MzkyNTksImV4cCI6MTcxMTczOTM3OX0.uQWHgARCWGVWjvmyEX1y1tQPguT1CmifOfH_Aa-404E"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// String firstName, String lastName, Address address, MobileNumberDTO mobileNumber, String emailAddress\n{\n    \"firstName\": \"firstName\",\n    \"lastName\": \"lastName\",\n    \"address\": {\n        \"houseNumber\": \"11\",\n        \"addition\": \"1\",\n        \"streetName\": \"test\",\n        \"city\": \"hilversum\",\n        \"pinCode\": \"1111 AA\",\n        \"region\": \"Noord Holland\",\n        \"country\": \"Netherlands\"\n    },\n    \"mobileNumber\": {\n        \"countryCode\": \"+31\",\n        \"number\": \"60000000\"\n    },\n    \"emailAddress\": \"abc@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/api/v1/customers/CID_50060021"
+			},
+			"response": []
+		},
+		{
+			"name": "create account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llZTEiLCJpYXQiOjE3MTE3Mzk2NjUsImV4cCI6MTcxMTczOTc4NX0.J_ZCgFrCn-Fk7udknqW-O_IOiyiAi0DYIuHPqVbBDqI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/accounts?accountType=SAVINGS&customerId=CID_50060021&initialAmount=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "accountType",
+							"value": "SAVINGS"
+						},
+						{
+							"key": "customerId",
+							"value": "CID_50060021"
+						},
+						{
+							"key": "initialAmount",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all accounts of a customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llZTEiLCJpYXQiOjE3MTE3Mzk4MDIsImV4cCI6MTcxMTczOTkyMn0.RVH4W0mrd2WULKA9E_jsTpIZ7NlfW7Rnwu-52ARz6sw"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/accounts?customerId=CID_50060021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "CID_50060021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create current account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llZTEiLCJpYXQiOjE3MTE3Mzk4NDAsImV4cCI6MTcxMTczOTk2MH0.K4zPROD7Earq-jXeUEMkbxB5BC7Tzd7ZYHo0thWL1TE"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/accounts?accountType=CURRENT_ACCOUNT&customerId=CID_50060021&initialAmount=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "accountType",
+							"value": "CURRENT_ACCOUNT"
+						},
+						{
+							"key": "customerId",
+							"value": "CID_50060021"
+						},
+						{
+							"key": "initialAmount",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all accounts of a customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llZTEiLCJpYXQiOjE3MTE3Mzk5ODUsImV4cCI6MTcxMTc0MDEwNX0.a3kNvf074Fq9t8guyYrAsgqAXXPypgGFfT-CCGv2qKU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/accounts?customerId=CID_50060021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"accounts"
+					],
+					"query": [
+						{
+							"key": "accountType",
+							"value": "CURRENT_ACCOUNT",
+							"disabled": true
+						},
+						{
+							"key": "customerId",
+							"value": "CID_50060021"
+						},
+						{
+							"key": "initialAmount",
+							"value": "20",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create transaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llZTEiLCJpYXQiOjE3MTE3NDEyMzAsImV4cCI6MTcxMTc0MTM1MH0.3yiLtTPHN5hZVHDsLivImWD6XHuSDVmfMU0mXJ0PqWY"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\":\"CID_50060021\",\n    \"accountNumber\": \"NL18ABNA50060021\",\n    \"type\": \"CREDIT\",\n    \"amount\": 10,\n    \"madeBy\":\"\",\n    \"madeTo\":\"\",\n    \"message\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/transactions?accountnumber=NL18ABNA50060021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "accountType",
+							"value": "CURRENT_ACCOUNT",
+							"disabled": true
+						},
+						{
+							"key": "initialAmount",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "accountnumber",
+							"value": "NL18ABNA50060021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transaction",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llZTEiLCJpYXQiOjE3MTE3NDE0MzEsImV4cCI6MTcxMTc0MTU1MX0.ffbzpluE3muucdiek2UR7iSlGUwKbDqNKkv2pHpOGHI"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\":\"CID_50060021\",\n    \"accountNumber\": \"NL18ABNA50060021\",\n    \"type\": \"CREDIT\",\n    \"amount\": 10,\n    \"madeBy\":\"\",\n    \"madeTo\":\"\",\n    \"message\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/transactions?accountNumber=NL18ABNA50060022",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "accountType",
+							"value": "CURRENT_ACCOUNT",
+							"disabled": true
+						},
+						{
+							"key": "initialAmount",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "accountNumber",
+							"value": "NL18ABNA50060022"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dashboard api",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbXBsb3llZTEiLCJpYXQiOjE3MTE3NDE1ODEsImV4cCI6MTcxMTc0MTcwMX0.euydTEN86rcdEGUb6A5qOj29pQ_1WwsSFIKESFfDXN0"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerId\":\"CID_50060021\",\n    \"accountNumber\": \"NL18ABNA50060021\",\n    \"type\": \"CREDIT\",\n    \"amount\": 10,\n    \"madeBy\":\"\",\n    \"madeTo\":\"\",\n    \"message\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/dashboard-api?customerId=CID_50060021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"dashboard-api"
+					],
+					"query": [
+						{
+							"key": "accountType",
+							"value": "CURRENT_ACCOUNT",
+							"disabled": true
+						},
+						{
+							"key": "initialAmount",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "customerId",
+							"value": "CID_50060021"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

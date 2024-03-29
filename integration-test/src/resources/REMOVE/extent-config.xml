@@ -1,0 +1,41 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<extentreports>-->
+<!--    <configuration>-->
+<!--        &lt;!&ndash; Report theme: standard, dark &ndash;&gt;-->
+<!--        <theme>standard</theme>-->
+
+<!--        &lt;!&ndash; Document encoding: defaults to UTF-8 &ndash;&gt;-->
+<!--        <encoding>UTF-8</encoding>-->
+
+<!--        &lt;!&ndash; Protocol for script and stylesheets: defaults to https &ndash;&gt;-->
+<!--        <protocol>https</protocol>-->
+
+<!--        &lt;!&ndash; Title of the document &ndash;&gt;-->
+<!--        <documentTitle>My Backend Framework</documentTitle>-->
+
+<!--        &lt;!&ndash; Report name displayed at top-nav &ndash;&gt;-->
+<!--        <reportName>My App Test Report</reportName>-->
+
+<!--        &lt;!&ndash; Global date format override: defaults to yyyy-MM-dd &ndash;&gt;-->
+<!--        <dateFormat>yyyy-MM-dd</dateFormat>-->
+
+<!--        &lt;!&ndash; Global time format override: defaults to HH:mm:ss &ndash;&gt;-->
+<!--        <timeFormat>HH:mm:ss</timeFormat>-->
+
+<!--        &lt;!&ndash; Custom JavaScript &ndash;&gt;-->
+<!--        <scripts>-->
+<!--            <![CDATA[-->
+<!--        $(document).ready(function() {-->
+
+<!--        });-->
+<!--      ]]>-->
+<!--        </scripts>-->
+
+<!--        &lt;!&ndash; Custom styles &ndash;&gt;-->
+<!--        <styles>-->
+<!--            <![CDATA[-->
+
+<!--      ]]>-->
+<!--        </styles>-->
+<!--    </configuration>-->
+<!--</extentreports>-->
